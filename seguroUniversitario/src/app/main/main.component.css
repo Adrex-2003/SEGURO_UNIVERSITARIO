@@ -1,7 +1,7 @@
 .section{
     display: flex;
     justify-content: center;
-    
+    overflow-x: hidden;
 }
 .container{
     width: 85%;
@@ -25,8 +25,8 @@
   
   flex-shrink: 0;
     display: flex;
-    width: 240px;
-    height: 240px;
+    width: 260px;
+    height: 260px;
     background-size: 90%; background-repeat: no-repeat; background-position: center;
     border: 10px solid rgb(177, 175, 175);
 }
@@ -77,13 +77,14 @@
         transform: translateX(0px);
     }
     100%{
-        -webkit-transform: translateX(-25%);
-        transform: translateX(-25%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 #about{
     width: 100%;
     display: inline-block;
+    color: gray;
 }
 .contain{
     width: 100%;
@@ -108,7 +109,7 @@
   
   .img-slide-track {
     display: flex;
-    animation: scroll 10s linear infinite; /* Ajusta el tiempo y la animación según lo necesites */
+    animation: scroll 30s linear infinite; /* Ajusta el tiempo y la animación según lo necesites */
   }
   
   .img-slide {
@@ -141,13 +142,23 @@
     overflow: hidden;
     width: 50%;
   }
-  
-  .m-slide-track {
+  @keyframes m-scroll{
+    0%{
+        -webkit-transform: translateX(240px);
+        transform: translateX(0px);
+    }
+    100%{
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+.m-slide-track {
     display: flex;
-    animation: scroll 20s linear infinite; /* Ajusta el tiempo y la animación según lo necesites */
+    animation: m-scroll 50s linear infinite; /* Ajusta el tiempo y la animación según lo necesites */
     gap: 25px;
-  }
-  
+}
+
+
 .m-slide {
     flex-shrink: 0;
     width: 240px; /* Ajusta el tamaño de la imagen según sea necesario */
@@ -216,4 +227,40 @@
   
 .row{
   margin-bottom: 80px;
+}
+.row-s p{
+  text-align: start;
+}
+@media(max-width: 1000px){
+  p{
+    color: gray;
+  }
+  .container{
+    width: 95%;
+  }
+  .title{
+    font-size: 1em;
+  }
+  .contain{
+    display: grid;
+  }
+  .head{
+    width: 100%;
+    margin: 0;
+  }
+  .slider-img{
+    width: 100%;
+    margin-top: 0;
+  }
+  .img-slide {
+    width: 300px; /* Ajusta el tamaño de la imagen según sea necesario */
+  }
+  .m-slide-v, .m-slide {
+    flex-shrink: 0;
+    width: 260px;
+    height: 360px;
+  }
+  .a-slide{
+    width: 320px;
+  }
 }
