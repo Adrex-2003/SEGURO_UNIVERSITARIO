@@ -14,32 +14,16 @@
     align-items: center;
     width: 100%;
 }
-.slider::before{
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    content: "";
-    width: 23.958%;
-    height: 110px;
-}
-
-.slider::after{
-    position: absolute;
-    right: 0;
-    content: "";
-    width: 23.958%;
-    height: 110px;
-}
 
 .slider .slide-track{
     display: inline-flex;
     animation: scroll 60s linear infinite;
-    -webkit-animation: scroll 60s linear infinite;
-    width: calc(400px*10);
     gap: 25px;
 }
 
 .slider .slide{
+  
+  flex-shrink: 0;
     display: flex;
     width: 240px;
     height: 240px;
@@ -58,20 +42,43 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .slide-font{
-    background-image: linear-gradient(to bottom right, rgba(220, 20, 60, 0.9) 25%, rgba(0, 0, 128, 1) 25%, rgba(255, 255, 255, 0)50%); 
-    width: 100%;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
-.slide-font a{
+.slide-font::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom right, rgba(221, 20, 60, 0.7) 25%, transparent 20%, transparent 50%);
+}
+.slide-font::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom right, rgba(0, 0, 128, 0.8) 20%, rgba(0, 0, 128, 0.8) 40%, rgba(0, 0, 128, 0.8) 25%, transparent 30%);
+}
+.slide-font h3{
     color: white;
+    margin-left: 20px;
 }
 @keyframes scroll{
     0%{
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
+        -webkit-transform: translateX(240px);
+        transform: translateX(0px);
     }
     100%{
-        -webkit-transform: translateX(calc(-240px * 5));
-        transform: translateX(-100%);
+        -webkit-transform: translateX(-25%);
+        transform: translateX(-25%);
     }
 }
 #about{
@@ -137,7 +144,7 @@
   
   .m-slide-track {
     display: flex;
-    animation: scroll 60s linear infinite; /* Ajusta el tiempo y la animación según lo necesites */
+    animation: scroll 20s linear infinite; /* Ajusta el tiempo y la animación según lo necesites */
     gap: 25px;
   }
   
@@ -184,7 +191,7 @@
   
 .a-slide-track {
     display: flex;
-    animation: scroll 60s linear infinite;
+    animation: scroll 20s linear infinite;
   }
   
 .a-slide {
