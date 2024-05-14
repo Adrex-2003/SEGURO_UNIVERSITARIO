@@ -1,9 +1,18 @@
+.section{
+    display: flex;
+    justify-content: center;
+    
+}
+.container{
+    width: 85%;
+}
 .slider{
     display: flex;
     height: auto;
     margin: auto;
     overflow: hidden;
     align-items: center;
+    width: 100%;
 }
 .slider::before{
     position: absolute;
@@ -12,7 +21,6 @@
     content: "";
     width: 23.958%;
     height: 110px;
-    background: linear-gradient(-90deg, hsla(0, 0%, 96.9%, 0), #f7f7f7);
 }
 
 .slider::after{
@@ -21,18 +29,22 @@
     content: "";
     width: 23.958%;
     height: 110px;
-    background: linear-gradient(90deg, hsla(0, 0%, 96.9%, 0), hsla(0, 0%, 96.9%, 0.99));
 }
 
 .slider .slide-track{
-    display: flex;
-    animation: scroll 35s linear infinite;
-    -webkit-animation: scroll 35s linear infinite;
-    width: calc(240px*10);
+    display: inline-flex;
+    animation: scroll 60s linear infinite;
+    -webkit-animation: scroll 60s linear infinite;
+    width: calc(400px*10);
+    gap: 25px;
 }
 
 .slider .slide{
     display: flex;
+    width: 240px;
+    height: 240px;
+    background-size: 90%; background-repeat: no-repeat; background-position: center;
+    border: 10px solid rgb(177, 175, 175);
 }
 
 .slider .slide img{
@@ -45,7 +57,13 @@
     border-radius: 8px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-
+.slide-font{
+    background-image: linear-gradient(to bottom right, rgba(220, 20, 60, 0.9) 25%, rgba(0, 0, 128, 1) 25%, rgba(255, 255, 255, 0)50%); 
+    width: 100%;
+}
+.slide-font a{
+    color: white;
+}
 @keyframes scroll{
     0%{
         -webkit-transform: translateX(0);
@@ -53,6 +71,139 @@
     }
     100%{
         -webkit-transform: translateX(calc(-240px * 5));
-        transform: translateX(calc(-240px * 5));
+        transform: translateX(-100%);
     }
 }
+#about{
+    width: 100%;
+    display: inline-block;
+}
+.contain{
+    width: 100%;
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.head{
+    width: 50%;
+}
+.slider-img{
+    width: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+
+}
+.img-slider {
+    overflow: hidden;
+    width: 50%;
+  }
+  
+  .img-slide-track {
+    display: flex;
+    animation: scroll 10s linear infinite; /* Ajusta el tiempo y la animación según lo necesites */
+  }
+  
+  .img-slide {
+    flex-shrink: 0;
+    width: 25%; /* Ajusta el tamaño de la imagen según sea necesario */
+    overflow: hidden;
+  }
+  
+  .img-slide img {
+    width: 100%; /* Ajusta el tamaño de la imagen según sea necesario */
+  }
+  
+  .slider-img{
+    width: 50%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+
+}
+.containe{
+    display: block;
+    width: 100%;
+}
+.slider-m{
+    overflow: hidden;
+    place-items: center;
+    width: 100%;
+}
+.m-slider {
+    overflow: hidden;
+    width: 50%;
+  }
+  
+  .m-slide-track {
+    display: flex;
+    animation: scroll 60s linear infinite; /* Ajusta el tiempo y la animación según lo necesites */
+    gap: 25px;
+  }
+  
+.m-slide {
+    flex-shrink: 0;
+    width: 240px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 320px;
+    overflow: hidden;
+    border: 15px solid rgb(220, 20, 60);
+    border-radius: 20px 0 0 0;
+}
+.m-slide-v {
+    flex-shrink: 0;
+    width: 240px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 320px;
+    overflow: hidden;
+    border: 15px solid navy;
+    border-radius: 20px 0 0 0;
+}
+  
+  .m-slide img, .m-slide-v img {
+    width: 100%; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 100%;
+    border-radius: 5px;
+  }
+  .im{
+    width: 100%;
+    height: 80%;
+  }
+  .description h5, p{
+    text-align: center;
+    margin: 4px;
+  }
+.atentions{
+    margin-top: 40px;
+    overflow: hidden;
+    place-items: center;
+    width: 100%;
+}
+.a-slider {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+.a-slide-track {
+    display: flex;
+    animation: scroll 60s linear infinite;
+  }
+  
+.a-slide {
+    flex-shrink: 0;
+    width: 25%; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 320px;
+    overflow: hidden;
+}
+.am{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+  .a-slide img {
+    width: 100%;
+  }
+  .description h3{
+    text-align: center;
+    color: gray;
+    margin: 0;
+  }
+  
