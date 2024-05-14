@@ -20,6 +20,12 @@ export class HeaderComponent {
       this.cont = this.cont + 1;
     }
   }
+
+  exit(){
+    while(this.cont < this.isClicked.length){
+      this.isClicked[this.cont] = false;
+    }
+  }
 }
 
 
